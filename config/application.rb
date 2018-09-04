@@ -18,7 +18,7 @@ module NothotdogRails
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3000'
+        origins 'http://nothotdog-rails.herokuapp.com'
         resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end
