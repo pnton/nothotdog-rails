@@ -17,16 +17,14 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  host: ec2-107-21-109-15.compute-1.amazonaws.com
-  port: 5432
-  database: dcgdfgec544a81
-  username: znejpckdccmhhq
-  password: 3f33a7ce59b7768acb7cccd49f31f339678852ed69100867e4732722417a1bae
+  database: nothotdog-rails_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,11 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  host: ec2-107-21-109-15.compute-1.amazonaws.com
-  port: 5432
-  database: dcgdfgec544a81
-  username: znejpckdccmhhq
-  password: 3f33a7ce59b7768acb7cccd49f31f339678852ed69100867e4732722417a1bae
+  database: nothotdog-rails_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,9 +79,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-
 production:
   <<: *default
-  database: ruby-getting-started_production
-  username: ruby-getting-started
-  password: <%= ENV['RUBY-GETTING-STARTED_DATABASE_PASSWORD'] %>
+  database: nothotdog-rails_production
+  username: pnton
+  password: <%= ENV['NOTHOTDOG-RAILS_DATABASE_PASSWORD'] %>
