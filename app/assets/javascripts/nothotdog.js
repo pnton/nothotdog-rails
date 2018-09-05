@@ -31,6 +31,12 @@ $(document).ready(function() {
             `<span class='eval'>Evaluating...</span>`
         );
 
+        $.ajaxSetup({
+          headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
+
         $.ajax({
             url: '/api/v1/nothotdog/is_hot_dog',
             type: 'POST',
