@@ -2,7 +2,7 @@ class Api::V1::NothotdogController < ApplicationController
   def is_hot_dog
     response = RestClient::Request.execute(
       method: :post,
-      url: 'http://nothotdog.elumitas.com:5000/is-hot-dog',
+      url: 'http://184.105.215.107:5000/is-hot-dog',
       user: 'peterton',
       password: 'elumitas',
       payload: { :file => params[:file] }
