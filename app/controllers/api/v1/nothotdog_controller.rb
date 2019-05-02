@@ -2,7 +2,7 @@ class Api::V1::NothotdogController < ApplicationController
   def is_hot_dog
     response = RestClient::Request.execute(
       method: :post,
-      url: 'js0xejfdzehz3w.gradient.paperspace.com:5000/is-hot-dog',
+      url: 'j3certdxjfg0c.gradient.paperspace.com:5000/is-hot-dog',
       user: 'peterton',
       password: 'elumitas',
       payload: { :file => params[:file] }
